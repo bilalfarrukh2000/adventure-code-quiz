@@ -163,7 +163,7 @@ timeLeft--;
 
 quizTimer.textContent = "Time left: " + timeLeft;
 
-if(timeLeft === 0) {
+if(timeLeft <= 0) {
 
 clearInterval(timerInterval);
 
@@ -308,7 +308,7 @@ correct = quizQuestions[currentQuestionIndex].correctAnswer;
 if (answer === correct && currentQuestionIndex !== finalQuestionIndex){
 
 score++;
-timeLeft=timeLeft-10;
+
 
 alert("That Is Correct!");
 
@@ -323,6 +323,8 @@ generateQuizQuestion();
 alert("That Is Incorrect.")
 
 currentQuestionIndex++;
+
+timeLeft=timeLeft-10;
 
 generateQuizQuestion();
 
